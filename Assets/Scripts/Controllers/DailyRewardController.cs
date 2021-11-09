@@ -22,7 +22,8 @@ public class DailyRewardController: BaseController
         // _dailyRewardView = generateLevelView;
        var prefab=ResourceLoader.LoadObject<DailyRewardView>(viewResource);
        _dailyRewardView=GameObject.Instantiate(prefab, placeForUi);
-       RefreshView();
+       AddGameObjects(_dailyRewardView.gameObject);
+        RefreshView();
     }
 
     public void RefreshView()
@@ -118,7 +119,7 @@ public class DailyRewardController: BaseController
 
     private void Return()
     {
-        _playerModel.CurrentState.Value = GameState.Game;
+        _playerModel.CurrentState.Value = GameState.Start;
     }
 
     private void ClaimReward()
