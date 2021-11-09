@@ -45,7 +45,7 @@ public class MainMenuController : BaseController
 
     private void StartGame()
     {
-        _profilePlayer.CurrentState.Value = GameState.Start;
+        _profilePlayer.CurrentState.Value = GameState.Game;
         
         _profilePlayer.AnalyticTools.SendMessage("start_game", ("time", Time.realtimeSinceStartup));
         
