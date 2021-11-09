@@ -5,7 +5,8 @@
         None,
         Start,
         Game,
-        Daily
+        Daily,
+        Fight
     }
 }
 

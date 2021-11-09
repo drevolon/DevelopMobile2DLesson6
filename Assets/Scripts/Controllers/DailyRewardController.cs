@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Profile;
 using UnityEngine;
 
-public class DailyRewardController
+public class DailyRewardController: BaseController
 {
     private readonly ProfilePlayer _playerModel;
     private readonly Transform _placeForUi;
@@ -118,7 +118,7 @@ public class DailyRewardController
 
     private void Return()
     {
-        _playerModel.CurrentState.Value = GameState.Start;
+        _playerModel.CurrentState.Value = GameState.Game;
     }
 
     private void ClaimReward()
@@ -150,8 +150,5 @@ public class DailyRewardController
         PlayerPrefs.DeleteAll();
     }
 
-    public void Dispose()
-    {
-        throw new NotImplementedException();
-    }
+  
 }

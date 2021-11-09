@@ -25,3 +25,11 @@ public class GameController : BaseController
     }
 }
 
+public class GameUIController: BaseController
+{
+    public GameUIController()
+    {
+        
+    }
+}
+

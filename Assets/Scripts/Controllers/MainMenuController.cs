@@ -16,8 +16,13 @@ public class MainMenuController : BaseController
     {
         _profilePlayer = profilePlayer;
         _view = LoadView(placeForUi);
-        _view.Init(StartGame,DailyReward, Exit);
+        _view.Init(StartGame,DailyReward, FightGame, Exit);
         _garageController = new GarageController(uprgradeItems, profilePlayer.CurrentCar);
+    }
+
+    private void FightGame()
+    {
+        _profilePlayer.CurrentState.Value = GameState.Fight;
     }
 
     private void Exit()
@@ -40,7 +45,7 @@ public class MainMenuController : BaseController
 
     private void StartGame()
     {
-        _profilePlayer.CurrentState.Value = GameState.Game;
+        _profilePlayer.CurrentState.Value = GameState.Start;
         
         _profilePlayer.AnalyticTools.SendMessage("start_game", ("time", Time.realtimeSinceStartup));
         
